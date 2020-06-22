@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<header>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="app.js" defer></script>
+</header>
+
+
+<body>
+    <div id="app">
+        <input type="text" v-model="name">
+        <p>{{ name }}</p>
+        <!-- 入力値によって動的に name が変わる -->
+    </div>
+    
+</body>
+

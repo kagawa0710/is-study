@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<header>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <!-- deferが必要 -->
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</header>
+
+
+<body>
+    <!-- app.jsの要素を呼び出す -->
+    <div class="red">
+        <p>あか</p>
+    </div>
+    <div class="strong">
+        <p>あか</p>
+    </div>
+    <div id="app">
+        <div
+            v-bind:class="{ red: isActive,  strong: hasError }"
+        >
+            <p>あか</p>
+        </div>
+    </div>
+    
+</body>
+

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!-- HTML要素をVue.jsで動的に指定したい場合は、v-bind を使います。 -->
+<header>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="app.js" defer></script>
+</header>
+
+
+<body>
+    <div id="app">
+        <a v-bind:href="link">Google</a>
+    </div>
+</body>
+
