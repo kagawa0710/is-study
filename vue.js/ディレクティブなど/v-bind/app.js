@@ -5,9 +5,4 @@ new Vue({
         age: 19,
         counter: 0
     },
-    methods: {
-        increase: function() {
-            this.counter += 1;
-        }
-    }
 })

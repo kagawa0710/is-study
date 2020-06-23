@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- https://jp.vuejs.org/v2/guide/list.html -->
+
+<header>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <!-- bootstrapを読みこむ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</header>
+
+
+<body>
+    <ul id="app01">
+        <li v-for="item in items" :key="item.message">
+            {{ item.message }}
+        </li>
+    </ul>
+
+    <ul id="app02">
+        <li v-for="(item, index) in items">
+            {{ item.message }} - {{ index }} - {{ item.message }}
+        </li>
+    </ul>
+
+    <ul id="v-for-object" class="demo">
+        <li v-for="value in object">
+          {{ value }}
+        </li>
+    </ul>
+
+    <div id="app04">
+        <p>{{ name }}</p>
+    </div>
+
+
+    <script>
+        var app01 = new Vue({
+            el: "#app01",
+            data: {
+                items: [
+                    { message: 'Foo' },
+                    { message: 'Bar' }
+                ]
+            }
+        })
+
+        var app02 = new Vue({
+            el: "#app02",
+            data: {
+                parentMessage: 'Parent',
+                items: [
+                    { message: 'Foo' },
+                    { message: 'Bar' }
+                ]
+            }
+        })
+
+        var app03 = new Vue({
+            el: '#v-for-object',
+            data: {
+                object: {
+                title: 'How to do lists in Vue',
+                author: 'Jane Doe',
+                publishedAt: '2016-04-10'
+                }
+            }
+        })
+
+        var app04 = new Vue({
+            el: '#app04',
+            dada: {
+                name: kagawa
+            }
+        })
+    </script>
+</body>
+

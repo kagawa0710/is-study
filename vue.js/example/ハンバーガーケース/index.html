@@ -1,19 +1,37 @@
 <!DOCTYPE html>
+<!-- https://www.markernet.co.jp/blog/2019/08/19/vue-js-hamburger-menu/ -->
 
 <header>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-    <!-- deferが必要 -->
-    <script src="app.js" defer></script>
+    <script src="./js/app.js" defer></script>
+    <link href="./css/style.css" rel="stylesheet">
 </header>
 
 
+
 <body>
-    <!-- app.jsの要素を呼び出す -->
     <div id="app">
-        <!-- dataを受け取る -->
-        <p>{{ name }}です。</p>
-        <p>{{ age }}歳です。</p>
+        <header class="header">
+            <div class="header__menu">
+                <div class="header__menu__line" @click="naviOpen" :class="{'is-active':active}">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </header>
+        <transition name="navi">
+            <nav class="navi" v-show="navi">
+                <ul class="navi__wrap">
+                    <li><a href="#">AAA</a></li>
+                    <li><a href="#">BBB</a></li>
+                    <li><a href="#">CCC</a></li>
+                    <li><a href="#">DDD</a></li>
+                    <li><a href="#">EEE</a></li>
+                </ul>
+            </nav>
+        </transition>
     </div>
-    
+
 </body>
 

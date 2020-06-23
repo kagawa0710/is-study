@@ -1,8 +1,13 @@
 new Vue({
-    //要素名
     el: '#app',
     data: {
-        name: "Yuuya",
-        age: 19,
+        active: false,
+        navi: false,
+    },
+    methods: {
+        naviOpen: function() {
+            this.active = !this.active;
+            this.navi = !this.navi;
+        }
     }
 })

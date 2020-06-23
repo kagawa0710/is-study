@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<header>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <!-- bootstrapを読みこむ -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>回文判定</title>
+</header>
+
+
+<body>
+    <div id="app" class="container">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h1 class="mt-5">回文判定</h1>
+                <div>
+                    <p>回文になっているか判定します。</p>
+                    <p><input type="text" name="sentence" v-model="sentence"><button @click="judge()">判定</button></p>
+                    <!-- ここが反映されない(palindromeがtrueになった時) -->
+                    <h1 v-show="palindrome">回文です</h1>
+                    <p>{{ reversedSentence }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                sentence: "",
+                palindrome: false,
+            },
+            computed: {
+                reversedSentence: function() {
+                    return this.sentence.split('').reverse().join('')
+                }
+            },
+            methods: {
+                judge: function(event){
+                    palindrome = this.sentence == this.reversedSentence
+                }
+            }
+        })
+    </script>
+</body>
+
